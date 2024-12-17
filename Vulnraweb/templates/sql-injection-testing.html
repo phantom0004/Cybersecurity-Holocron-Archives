@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/sql-injection-testing.css') }}">
+    <title>SQL Injection Testing</title>
+</head>
+<body>
+
+<div class="container">
+    <h2>SQL Injection Testing</h2>
+    <form method="POST" action="/sql-injection">
+        <label for="item_name">Enter Item Name:</label>
+        <input type="text" id="item_name" name="item_name" required>
+        <label for="item_ID">Enter Item Product ID:</label>
+        <input type="text" id="item_ID" name="item_ID" required>
+        <button type="submit">Submit</button>
+    </form>
+    
+    <div class="result">
+        <h3>Item Details:</h3>
+        <p><strong>Item Name:</strong> {{ item_name }}</p>
+        <p><strong>Item ID:</strong> {{ item_ID }}</p>
+        <p><strong>Status Message: {{ status_message }}</strong></p>
+    </div>
+    
+    <div class="back-link">
+        <a href="/">Go back to main page</a>
+    </div>
+</div>
+
+</body>
+</html>

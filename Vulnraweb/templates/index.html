@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}">
+        <title>Security Testing Main Page</title>
+    </head>
+
+    <body>
+
+    <nav>
+        <a href="/xss">XSS Testing</a>
+        <a href="/sql-injection">SQL Injection Testing</a>
+        <a href="/brute-forcing">Brute Forcing Testing</a>
+        <a href="/command-injection">Command Injection Testing</a>
+    </nav>
+
+    <div class="header">
+        <img src="https://static.thenounproject.com/png/870666-200.png" alt="Hacking Icon">
+        <h1>Security Testing Main Page</h1>
+        <p>Welcome to the security testing platform. Select a test from the navigation bar to get started.</p>
+    </div>
+
+    <div class="content">
+        <h2 class="info-title">Information on Attacks</h2>
+        <h2 id="xss-testing">XSS Testing</h2>
+        <p>Cross-Site Scripting (XSS) is a type of security vulnerability typically found in web applications. It allows attackers to inject malicious scripts into content from otherwise trusted websites.</p>
+
+        <h2 id="sql-injection-testing">SQL Injection Testing</h2>
+        <p>SQL Injection is a code injection technique that might destroy your database. It is one of the most common web hacking techniques, where malicious SQL statements are inserted into an entry field for execution.</p>
+
+        <h2 id="brute-forcing-testing">Brute Forcing Testing</h2>
+        <p>Brute Force Attack involves trying all possible keys, passwords, or combinations to gain unauthorized access to a system. It's an exhaustive search and one of the most straightforward methods of attack.</p>
+
+        <h2 id="command-injection-testing">Command Injection Testing</h2>
+        <p>Command Injection is an attack in which the goal is the execution of arbitrary commands on the host operating system via a vulnerable application. It allows attackers to execute arbitrary commands on a host system.</p>
+    </div>
+
+    <footer>
+        &copy; Phantom0004 - Security Testing Platform. All rights reserved.
+    </footer>
+
+    </body>
+</html>

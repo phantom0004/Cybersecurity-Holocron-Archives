@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/xss-testing.css') }}">
+        <title>XSS Testing</title>
+    </head>
+    <body>
+        <div class="container">
+            <h2>XSS Testing</h2>
+            <form method="POST" action="/xss">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                
+                <label for="comment">Comment:</label>
+                <textarea id="comment" name="comment" rows="4" required></textarea>
+                
+                <button type="submit">Submit</button>
+            </form>
+            
+            {% if username or comment %}
+            <div class="result">
+                <h3>Submitted Data:</h3>
+                <p><strong>Username:</strong> {{ username | safe}}</p>
+                <p><strong>Comment:</strong> {{ comment | safe}}</p>
+            </div>
+            {% endif %}
+
+            <div class="back-link">
+                <a href="/">Go back to main page</a>
+            </div>
+        </div>
+    </body>
+</html>

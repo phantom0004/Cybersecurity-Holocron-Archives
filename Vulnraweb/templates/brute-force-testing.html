@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/brute-force-testing.css') }}">
+        <title>Brute Force Testing</title>
+    </head>
+    <body>
+
+    <div class="container">
+        <h2>Brute Force Testing</h2>
+        <form method="POST" action="/brute-forcing">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <button type="submit">Login</button>
+        </form>
+
+        {% if username and password %}
+            {% if username != "admin" or password != "admin" %}
+                <p style="text-align: center; color: red;"><strong>Incorrect Username and/or Password</strong></p>
+            {% else %}
+                <p style="text-align: center; color: green;"><strong>Login Successful</strong></p>
+            {% endif %}
+        {% endif %}
+    
+        {% if username or password %}
+        <div class="result">
+            <h3>Submitted Data:</h3>
+            <p><strong>Username:</strong> {{ username }}</p>
+            <p><strong>Password:</strong> {{ password }}</p>
+        </div>
+        {% endif %}
+            
+        <div class="back-link">
+            <a href="/">Go back to main page</a>
+        </div>
+    </div>
+
+    </body>
+</html>
