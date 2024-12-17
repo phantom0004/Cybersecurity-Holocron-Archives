@@ -1,0 +1,17 @@
+# Libraries used for the server python file
+pwn
+termcolor
+cryptography
+pickle
+uuid
+
+# Libraries used for the client python file
+socket
+keyboard
+cryptography
+winreg
+time
+sys
+PIL
+pickle
+platform
